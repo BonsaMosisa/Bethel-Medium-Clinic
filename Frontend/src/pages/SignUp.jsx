@@ -1,28 +1,28 @@
 // src/pages/SignUp.jsx
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    password: '',
-    confirmPassword: ''
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    password: "",
+    confirmPassword: "",
   });
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle sign up logic here
-    console.log('Sign up:', formData);
+    console.log("Sign up:", formData);
   };
 
   return (
@@ -30,15 +30,20 @@ const SignUp = () => {
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <Link to="/" className="flex justify-center">
           <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
-            <span className="text-white font-bold text-xl">B</span>
+            <span className="text-white font-bold text-xl">
+              <img src="/bethellogo.png" alt="bethel logo" />
+            </span>
           </div>
         </Link>
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
           Create your account
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
-          Or{' '}
-          <Link to="/signin" className="font-medium text-blue-600 hover:text-blue-500">
+          Or{" "}
+          <Link
+            to="/signin"
+            className="font-medium text-blue-600 hover:text-blue-500"
+          >
             sign in to your existing account
           </Link>
         </p>
@@ -49,7 +54,10 @@ const SignUp = () => {
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
+                <label
+                  htmlFor="firstName"
+                  className="block text-sm font-medium text-gray-700"
+                >
                   First Name
                 </label>
                 <div className="mt-1">
@@ -66,7 +74,10 @@ const SignUp = () => {
               </div>
 
               <div>
-                <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">
+                <label
+                  htmlFor="lastName"
+                  className="block text-sm font-medium text-gray-700"
+                >
                   Last Name
                 </label>
                 <div className="mt-1">
@@ -84,7 +95,10 @@ const SignUp = () => {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Email address
               </label>
               <div className="mt-1">
@@ -102,7 +116,10 @@ const SignUp = () => {
             </div>
 
             <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="phone"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Phone Number
               </label>
               <div className="mt-1">
@@ -119,7 +136,10 @@ const SignUp = () => {
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Password
               </label>
               <div className="mt-1">
@@ -137,7 +157,10 @@ const SignUp = () => {
             </div>
 
             <div>
-              <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="confirmPassword"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Confirm Password
               </label>
               <div className="mt-1">

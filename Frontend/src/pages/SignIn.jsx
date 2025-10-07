@@ -1,24 +1,24 @@
 // src/pages/SignIn.jsx
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
   const [formData, setFormData] = useState({
-    email: '',
-    password: ''
+    email: "",
+    password: "",
   });
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle sign in logic here
-    console.log('Sign in:', formData);
+    console.log("Sign in:", formData);
   };
 
   return (
@@ -26,15 +26,20 @@ const SignIn = () => {
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <Link to="/" className="flex justify-center">
           <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
-            <span className="text-white font-bold text-xl">B</span>
+            <span className="text-white font-bold text-xl">
+              <img src="/bethellogo.png" alt="bethel logo" />
+            </span>
           </div>
         </Link>
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
           Sign in to your account
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
-          Or{' '}
-          <Link to="/signup" className="font-medium text-blue-600 hover:text-blue-500">
+          Or{" "}
+          <Link
+            to="/signup"
+            className="font-medium text-blue-600 hover:text-blue-500"
+          >
             create a new account
           </Link>
         </p>
@@ -44,7 +49,10 @@ const SignIn = () => {
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Email address
               </label>
               <div className="mt-1">
@@ -62,7 +70,10 @@ const SignIn = () => {
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Password
               </label>
               <div className="mt-1">
@@ -87,13 +98,19 @@ const SignIn = () => {
                   type="checkbox"
                   className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                 />
-                <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
+                <label
+                  htmlFor="remember-me"
+                  className="ml-2 block text-sm text-gray-900"
+                >
                   Remember me
                 </label>
               </div>
 
               <div className="text-sm">
-                <a href="#" className="font-medium text-blue-600 hover:text-blue-500">
+                <a
+                  href="#"
+                  className="font-medium text-blue-600 hover:text-blue-500"
+                >
                   Forgot your password?
                 </a>
               </div>
