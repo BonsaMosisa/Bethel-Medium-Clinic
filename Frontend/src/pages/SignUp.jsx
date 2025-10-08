@@ -31,7 +31,11 @@ const SignUp = () => {
         <Link to="/" className="flex justify-center">
           <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
             <span className="text-white font-bold text-xl">
-              <img src="/bethellogo.png" alt="bethel logo" />
+              <img
+                src="/bethellogo.png"
+                alt="bethel logo"
+                className="rounded-full"
+              />
             </span>
           </div>
         </Link>

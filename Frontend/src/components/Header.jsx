@@ -1,12 +1,19 @@
-// src/components/Header.jsx
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [language, setLanguage] = useState("en"); // default: English
   const location = useLocation();
 
   const isActive = (path) => location.pathname === path;
+
+  const handleLanguageChange = (e) => {
+    const selectedLang = e.target.value;
+    setLanguage(selectedLang);
+    // Here you can also store the selection in localStorage or context
+    // localStorage.setItem("lang", selectedLang);
+  };
 
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50">
@@ -15,9 +22,11 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-lg">
-                <img src="/bethellogo.png" alt="bethel logo" />
-              </span>
+              <img
+                src="/bethellogo.png"
+                alt="bethel logo"
+                className="rounded-full"
+              />
             </div>
             <div>
               <h1 className="text-xl font-bold text-gray-800">
@@ -71,6 +80,17 @@ const Header = () => {
             >
               Contact
             </Link>
+
+            {/* Language Selector */}
+            <select
+              value={language}
+              onChange={handleLanguageChange}
+              className="border border-gray-300 rounded-lg px-2 py-1 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option value="en">🇬🇧 English</option>
+              <option value="">🇴🇲 Afaan Oromoo</option>
+              <option value="am">🇪🇹 አማርኛ</option>
+            </select>
 
             <div className="flex space-x-4">
               <Link
@@ -145,6 +165,17 @@ const Header = () => {
               >
                 Contact
               </Link>
+
+              {/* Mobile Language Selector */}
+              <select
+                value={language}
+                onChange={handleLanguageChange}
+                className="border border-gray-300 rounded-lg px-2 py-1 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="en">🇬🇧 English</option>
+                <option value="om">🇴🇲 Afaan Oromoo</option>
+                <option value="am">🇪🇹 አማርኛ</option>
+              </select>
 
               <div className="flex flex-col space-y-2 pt-2">
                 <Link
