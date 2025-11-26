@@ -63,7 +63,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
             <ul className="space-y-2 text-gray-300">
               <li>📍Nekemte</li>
-              <li>📞 +2519120386**</li>
+              <li>📞 +251912038677</li>
               <li>✉️ info.bethelmediumclinic@gmail.com</li>
               <li>🕒 24/7 Emergency Services</li>
             </ul>
